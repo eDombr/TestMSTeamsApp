@@ -1,11 +1,8 @@
 import * as React from "react";
-import { Provider, Flex, Header, Dropdown, TextArea, Input, ThemePrepared, themes } from "@fluentui/react-northstar";
 import TeamsBaseComponent, { ITeamsBaseComponentState } from "msteams-react-base-component";
 import * as microsoftTeams from "@microsoft/teams-js";
-import { map, find } from "lodash";
-import * as OT from "@opentok/client";
+import { Provider } from "@fluentui/react-northstar";
 
-import { OTSession, OTPublisher, OTStreams, OTSubscriber } from "opentok-react";
 import Settings from "./Settings";
 import SidePanel from "./SidePanel";
 /**
@@ -37,10 +34,13 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
             microsoftTeams.registerOnThemeChangeHandler(this.updateTheme);
             microsoftTeams.getContext((context: any) => {
                 microsoftTeams.appInitialization.notifySuccess();
+                const decodedMeetingId = atob(context.meetingId);
+                const meetingId = decodedMeetingId.slice(decodedMeetingId.indexOf("meeting"), decodedMeetingId.indexOf("@thread"));
+
                 this.setState({
                     entityId: context.entityId,
                     frameContext: context.frameContext,
-                    meetingId: context.meetingId
+                    meetingId
                 });
                 this.updateTheme(context.theme);
             });
@@ -56,10 +56,16 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
      */
     public render() {
         return (
-            this.state.frameContext === "content" ?
-                <Settings theme={this.state.theme}></Settings> :
-            this.state.frameContext === "sidePanel" ?
-                <SidePanel meetingId="asd1234567"></SidePanel> : <SidePanel meetingId="asd1234567"></SidePanel>
+            <Provider theme={this.state.theme}>
+                {
+                    this.state.frameContext === "content" ?
+                        <Settings meetingId={this.state.meetingId}></Settings> :
+                        (this.state.frameContext === "sidePanel" ?
+                            <SidePanel meetingId={this.state.meetingId}></SidePanel> : null)
+                }
+                {/* <SidePanel meetingId={this.state.meetingId}></SidePanel> */}
+                {/* <Settings meetingId={this.state.meetingId}></Settings> */}
+            </Provider>
         );
     }
 }

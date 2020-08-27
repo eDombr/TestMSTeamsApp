@@ -3,11 +3,8 @@ import {
     Provider,
     Flex,
     Header,
-    Input,
     ThemePrepared,
-    themes,
-    DropdownProps,
-    Dropdown
+    themes
 } from "@fluentui/react-northstar";
 import TeamsBaseComponent, { ITeamsBaseComponentState } from "msteams-react-base-component";
 import * as microsoftTeams from "@microsoft/teams-js";
