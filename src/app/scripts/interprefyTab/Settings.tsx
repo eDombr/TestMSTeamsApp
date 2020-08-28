@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Flex, Header, Dropdown, TextArea, Input, Button } from "@fluentui/react-northstar";
-import { map } from "lodash";
+import { map, remove } from "lodash";
 
 import axios from "../axios/axios-interprefy";
 
@@ -47,6 +47,21 @@ const Settings: React.FC<ISettingsProps> = (props) => {
         industry: ""
     });
 
+    React.useEffect(() => {
+        const fetchLanguages = async () => {
+            const response = await axios.get(`Meetings/sessions?meetingId=${props.meetingId}`);
+            const languages = map(response.data, "language");
+            remove(languages, langauge => langauge === "source");
+
+            setSettingForm({
+                ...settingForm,
+                languages
+            });
+        };
+
+        fetchLanguages();
+    }, [props.meetingId]);
+
     const onChangeControl = (e, { id, value }) => {
         const formControls = { ...settingForm };
         formControls[id] = value;
@@ -88,6 +103,7 @@ const Settings: React.FC<ISettingsProps> = (props) => {
                             fluid
                             placeholder="Languages"
                             id="languages"
+                            value={settingForm.languages}
                             onChange={onChangeControl}
                             multiple={true}
                             items={items}

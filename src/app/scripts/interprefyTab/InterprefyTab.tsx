@@ -36,7 +36,6 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
                 microsoftTeams.appInitialization.notifySuccess();
                 const decodedMeetingId = atob(context.meetingId);
                 const meetingId = decodedMeetingId.slice(decodedMeetingId.indexOf("meeting"), decodedMeetingId.indexOf("@thread"));
-
                 this.setState({
                     entityId: context.entityId,
                     frameContext: context.frameContext,

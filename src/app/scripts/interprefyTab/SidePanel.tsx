@@ -3,7 +3,7 @@ import * as OT from "@opentok/client";
 
 import axios from "../axios/axios-interprefy";
 import { Slider, Flex, Header, Dropdown } from "@fluentui/react-northstar";
-import { map, find } from "lodash";
+import { map, find, remove } from "lodash";
 
 interface ISidePanelProps {
     meetingId: string;
@@ -34,6 +34,7 @@ export default class SidePanel extends React.Component<ISidePanelProps, ISidePan
         try {
             const response = await axios.get(`Meetings/sessions?meetingId=${this.props.meetingId}`);
             const languages = response.data;
+            remove(languages, ["language", "source"]);
 
             this.setState({
                 languages
