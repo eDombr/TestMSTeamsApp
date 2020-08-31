@@ -1,8 +1,13 @@
+* {
+	font-family: 'Segoe UI Regular';
+}
+
 body {
 	font-family: sans-serif;
 
-	max-width: 80vw;
+	max-width: 100vw;
 	margin: 0 auto;
+	background-color: transparent;
 }
 
 .l-header {
@@ -41,4 +46,71 @@ img.logo {
 
 .marginBottom10 {
 	margin-bottom: 10px;
+}
+
+.interprefyLabel {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.noPaddingButton {
+	min-width: auto !important;
+	padding: 0 !important;
+}
+
+.cursorPointer {
+	cursor: pointer;
+}
+
+:root {
+	--interprefy-primary-color: #ff6b2d;
+	--interprefy-slider-track-color: #04568f;
+	--interprefy-grey-color: #696668;
+}
+
+.interprefyPrimaryColor {
+	color: var(--interprefy-primary-color) !important;
+}
+
+.interprefyGreyColor {
+	color: var(--interprefy-grey-color) !important;
+}
+
+.ui-slider__track {
+	background: var(--interprefy-slider-track-color) !important;
+}
+
+.ui-slider__rail {
+	background: var(--interprefy-primary-color) !important;
+}
+
+.languageList {
+	.languageItem {
+		border: 1px solid var(--interprefy-primary-color);
+		color: var(--interprefy-primary-color);
+		cursor: pointer;
+		border-radius: 50px;
+		padding: 10px 0;
+		
+		&.active {
+			background: var(--interprefy-primary-color);
+			color: white;
+		}
+	}
+
+}
+
+@font-face {
+	font-family: 'Segoe UI Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Segoe UI Regular'), url('./fonts/SegoeUI/Segoe UI.woff') format('woff');
+}
+	
+	
+@font-face {
+	font-family: 'Segoe UI Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Segoe UI Bold'), url('./fonts/SegoeUI/Segoe UI Bold.woff') format('woff');
 }
