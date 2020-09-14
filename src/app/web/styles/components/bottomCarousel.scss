@@ -1,0 +1,19 @@
+.bottomCarousel {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+
+    .bottomCarouselButton {
+        background-color: var(--interprefy-primary-color);
+        padding: 5px 0;
+        margin: 0 10px;
+        width: 60vw;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+    }
+
+    .bottomCarouselIcon {
+        cursor: pointer;
+    }
+}

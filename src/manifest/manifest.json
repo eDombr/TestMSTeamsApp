@@ -5,18 +5,18 @@
   "version": "{{VERSION}}",
   "packageName": "{{PACKAGE_NAME}}",
   "developer": {
-    "name": "Interprefy",
-    "websiteUrl": "https://{{HOSTNAME}}",
-    "privacyUrl": "https://{{HOSTNAME}}/privacy.html",
-    "termsOfUseUrl": "https://{{HOSTNAME}}/tou.html"
+    "name": "Interprefy AG",
+    "websiteUrl": "https://www.interprefy.com",
+    "privacyUrl": "https://www.interprefy.com/privacy-policy",
+    "termsOfUseUrl": "https://www.interprefy.com/terms-of-use"
   },
   "name": {
     "short": "Interprefy",
     "full": "Interprefy"
   },
   "description": {
-    "short": "TODO: add short description here",
-    "full": "TODO: add full description here"
+    "short": "Interprefy is a flexible, scalable and premium cloud interpreting platform.",
+    "full": "Through Interprefy's platform, interpreters can work from anywhere, removing the need for event organizers to hire and deploy specialized hardware, interpreting booths or pay for interpreters' travel and accommodation expenses. Event attendees can enjoy conference level interpreting by listening to the language of their choice in crystal clear audio through Interprefy solution. Users are able to attend meetings from around the world listening and speaking in their native or preferred language. Interprefy solution is used across a variety of industries from Pharmaceutical, Telecommunications, Aviation, Sports, Fashion, Food & Beverages, Retail, Banking, Insurance, Legal and Non-Governmental and International Organizations."
   },
   "icons": {
     "outline": "icon-outline.png",
@@ -46,8 +46,9 @@
     "messageTeamMembers"
   ],
   "validDomains": [
-    "{{HOSTNAME}}",
-    "interprefy-be.azurewebsites.net"
+    "interprefy.azurewebsites.net",
+    "interprefy-be.azurewebsites.net",
+    "www.interprefy.com"
   ],
   "showLoadingIndicator": true
 }

@@ -1,0 +1,36 @@
+:root {
+    --interprefy-chips-background: #696668;
+    --interprefy-disabled-background: #fff;
+    --interprefy-disabled-color: rgb(200, 198, 196);
+}
+
+.ui-dropdown__selecteditem {
+    background: var(--interprefy-chips-background) !important;
+}
+
+.ui-dropdown__selecteditem__header {
+    font-weight: 300;
+}
+
+.ui-dropdown__container {
+    background-color: var(--interprefy-disabled-background) !important;
+}
+
+.ui-dropdown.disabled {
+    .ui-dropdown__selecteditem {
+        pointer-events: none;
+    }
+
+    .ui-label {
+        background: transparent !important;
+        color: var(--interprefy-disabled-color);
+    }
+
+    .ui-box.ui-dropdown__selecteditem__icon {
+        color: var(--interprefy-disabled-color);
+    }
+}
+
+.ui-textarea:disabled {
+    color: var(--interprefy-disabled-color);
+}

@@ -1,0 +1,11 @@
+import * as React from "react";
+
+const InterprefyVoiceIcon = () => {
+    return (
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1562 16L10.6562 14.125H5.65625V8.46875H5.34375L2.84375 10.3438V8.46875H0V0H10.3438V5.65625H16V14.125H13.1562V16ZM12.2188 13.1875H15.0625V6.59375H6.59375V13.1875H10.9688L12.2188 14.125V13.1875ZM5.03125 7.53125L3.78125 8.46875V7.53125H0.9375V0.9375H9.40625V5.65625H7.35217L5.1875 1.3269L2.89319 5.91541L3.73169 6.33472L4.3053 5.1875H6.0697L6.30408 5.65625H5.65625V7.53125H5.03125ZM5.1875 3.4231L4.77405 4.25H5.60095L5.1875 3.4231Z" fill="white" />
+        </svg>
+    );
+};
+
+export default InterprefyVoiceIcon;

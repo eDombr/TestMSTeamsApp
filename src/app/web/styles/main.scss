@@ -1,6 +1,8 @@
-* {
-	font-family: 'Segoe UI Regular';
-}
+@import "./components//languageList.scss";
+@import "./components/poweredBy.scss";
+@import "./components/controls.scss";
+@import "./components/bottomCarousel.scss";
+@import "./layout.scss";
 
 body {
 	font-family: sans-serif;
@@ -44,18 +46,14 @@ img.logo {
 	height: auto;
 }
 
-.marginBottom10 {
-	margin-bottom: 10px;
-}
-
 .interprefyLabel {
 	font-size: 14px;
 	line-height: 20px;
 }
 
-.noPaddingButton {
-	min-width: auto !important;
-	padding: 0 !important;
+.optional {
+	color: #000;
+	opacity: .5;
 }
 
 .cursorPointer {
@@ -82,35 +80,4 @@ img.logo {
 
 .ui-slider__rail {
 	background: var(--interprefy-primary-color) !important;
-}
-
-.languageList {
-	.languageItem {
-		border: 1px solid var(--interprefy-primary-color);
-		color: var(--interprefy-primary-color);
-		cursor: pointer;
-		border-radius: 50px;
-		padding: 10px 0;
-		
-		&.active {
-			background: var(--interprefy-primary-color);
-			color: white;
-		}
-	}
-
-}
-
-@font-face {
-	font-family: 'Segoe UI Regular';
-	font-style: normal;
-	font-weight: normal;
-	src: local('Segoe UI Regular'), url('./fonts/SegoeUI/Segoe UI.woff') format('woff');
-}
-	
-	
-@font-face {
-	font-family: 'Segoe UI Bold';
-	font-style: normal;
-	font-weight: normal;
-	src: local('Segoe UI Bold'), url('./fonts/SegoeUI/Segoe UI Bold.woff') format('woff');
 }

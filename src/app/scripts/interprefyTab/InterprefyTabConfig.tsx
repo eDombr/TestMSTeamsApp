@@ -44,7 +44,7 @@ export class InterprefyTabConfig extends TeamsBaseComponent<IInterprefyTabConfig
                 microsoftTeams.settings.setSettings({
                     contentUrl: host + "/interprefyTab/?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
                     websiteUrl: host + "/interprefyTab/?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
-                    suggestedDisplayName: "InterprefyTab",
+                    suggestedDisplayName: "Interprefy",
                     removeUrl: host + "/interprefyTab/remove.html?theme={theme}",
                     entityId: this.state.value
                 });
@@ -59,7 +59,7 @@ export class InterprefyTabConfig extends TeamsBaseComponent<IInterprefyTabConfig
             <Provider theme={this.state.theme}>
                 <Flex fill={true}>
                     <Flex.Item>
-                        <Header content="Click 'Save' to add the tab to the meeting" />
+                        <Header as="h2" content="Click 'Save' to add the tab to the meeting" />
                     </Flex.Item>
                 </Flex>
             </Provider>

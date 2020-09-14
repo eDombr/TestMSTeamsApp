@@ -1,0 +1,15 @@
+.languageList {
+	.languageItem {
+		border: 1px solid var(--interprefy-primary-color);
+		color: var(--interprefy-primary-color);
+		cursor: pointer;
+		border-radius: 50px;
+		padding: 10px 0;
+		
+		&.active {
+			background: var(--interprefy-primary-color);
+			color: white;
+		}
+	}
+
+}

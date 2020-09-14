@@ -51,7 +51,7 @@ const config = {
     }
     ],
     // This is the name of the packaged manifest file
-    manifestFileName: "InterprefyTab.zip"
+    manifestFileName: "Interprefy.zip"
 };
 
 module.exports = config;

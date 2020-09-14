@@ -3,7 +3,7 @@ import TeamsBaseComponent, { ITeamsBaseComponentState } from "msteams-react-base
 import * as microsoftTeams from "@microsoft/teams-js";
 import { Provider, ThemePrepared, themes } from "@fluentui/react-northstar";
 
-import Settings from "./Settings";
+import Settings from "./PreMeeting/Settings";
 import SidePanel from "./SidePanel/SidePanel";
 /**
  * State for the interprefyTabTab React component
@@ -14,6 +14,7 @@ export interface IInterprefyTabState extends ITeamsBaseComponentState {
     frameContext: string;
     meetingId: string;
     email: string;
+    userId: string;
 }
 
 /**
@@ -41,6 +42,7 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
                     entityId: context.entityId,
                     frameContext: context.frameContext,
                     meetingId,
+                    userId: context.userObjectId,
                     email: context.userPrincipalName
                 });
                 this.updateTheme(context.theme);
@@ -60,7 +62,7 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
             <Provider theme={this.state.teamsTheme}>
                 {
                     this.state.frameContext === "content" ?
-                        <Settings meetingId={this.state.meetingId} email={this.state.email}></Settings> :
+                        <Settings meetingId={this.state.meetingId} email={this.state.email} userId={this.state.userId}></Settings> :
                         (this.state.frameContext === "sidePanel" ?
                             <SidePanel meetingId={this.state.meetingId}></SidePanel> : null)
                 }
@@ -87,9 +89,23 @@ export class InterprefyTab extends TeamsBaseComponent<IInterprefyTabProps, IInte
                 theme = themes.teams;
                 break;
         }
+
+        this.updateCSSVariables(theme);
+
         // update the state
         this.setState(Object.assign({}, this.state, {
             teamsTheme: theme
         }));
+    }
+
+    private updateCSSVariables(theme: ThemePrepared): void {
+        const { siteVariables } = theme;
+
+        const root = document.documentElement;
+
+        root.style.setProperty("--interprefy-chips-background", siteVariables.colorScheme.default.border);
+        root.style.setProperty("--interprefy-status-point-default-border", siteVariables.colorScheme.default.borderHover);
+        root.style.setProperty("--interprefy-disabled-background", siteVariables.colorScheme.default.background);
+        root.style.setProperty("--interprefy-disabled-color", siteVariables.colorScheme.default.foregroundDisabled);
     }
 }

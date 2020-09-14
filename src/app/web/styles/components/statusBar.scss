@@ -1,0 +1,59 @@
+:root {
+    --interprefy-status-point-default-border: #c4c4c4;
+}
+
+.statusBar {
+    margin-top: 25px;
+
+    height: 43px;
+    border-top: 2px solid;
+
+    .statusItem {
+        padding-right: 20%;
+        position: relative;
+        top: -2px;
+
+        &.completed {
+            border-top: 2px solid var(--interprefy-primary-color);
+        }
+
+        p {
+            white-space: nowrap;
+            width: 100px;
+            text-align: center;
+        }
+
+        .statusPointWrapper {
+            position: relative;
+            left: -50px;
+        }
+    }
+
+    .statusPoint {
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        border: 2px solid;
+        border-color: var(--interprefy-status-point-default-border);
+        background: white;
+
+        position: absolute;
+        top: -12px;
+
+        &.completed {
+            border-color: var(--interprefy-primary-color);
+            background: var(--interprefy-primary-color);
+        }
+
+        &.active {
+            border-color: var(--interprefy-primary-color);
+        }
+
+        .statusPointActiveInner {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--interprefy-primary-color);
+        }
+    }
+}
